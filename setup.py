@@ -15,5 +15,6 @@ setup(
     install_requires=[
         'psycopg2',
         'ConfigArgParse',
+        'prometheus_client',
     ],
 )
