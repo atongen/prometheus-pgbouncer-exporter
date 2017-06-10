@@ -5,6 +5,14 @@ before_script:
   - which python
   - pip3 install psycopg2
 
+stages:
+  - unittest
+  - install
+
 unittest:
   script:
     - python3 -m unittest discover tests
+
+install:
+  script:
+    - python3 setup.py install
