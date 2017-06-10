@@ -12,4 +12,8 @@ setup(
             'prometheus-pgbouncer-exporter = prometheus_pgbouncer_exporter.cli:main',
         ],
     },
+    install_requires=[
+        'psycopg2',
+        'ConfigArgParse',
+    ],
 )
