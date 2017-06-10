@@ -12,4 +12,4 @@ unittest:
 install:
   script:
     - python3 setup.py install
-    - promtheus-pgbouncer-exporter --version
+    - prometheus-pgbouncer-exporter --version
