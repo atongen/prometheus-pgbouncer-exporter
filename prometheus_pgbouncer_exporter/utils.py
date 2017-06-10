@@ -16,7 +16,7 @@ import psycopg2
 
 def get_connection(user=None, port=None, host=None, dbname='pgbouncer', password=None):
     kwargs = { 'user': user, 'port': port, 'host': host, 'dbname': dbname, 'password': password }
-    kwargs = dict([(k, v) for k, v in kwargs.iteritems() if v])
+    kwargs = dict([(k, v) for k, v in kwargs.items() if v])
     connection = psycopg2.connect(
         **kwargs
     )
