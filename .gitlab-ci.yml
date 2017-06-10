@@ -5,16 +5,11 @@ before_script:
   - which python
   - pip3 install psycopg2
 
-stages:
-  - unittest
-  - integration
-
 unittest:
-  stage: unittest
   script:
     - python3 -m unittest discover tests
 
 install:
-  stage: integration
   script:
     - python3 setup.py install
+    - promtheus-pgbouncer-exporter --version
