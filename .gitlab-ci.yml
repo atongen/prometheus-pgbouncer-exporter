@@ -1,0 +1,15 @@
+image: python:3.3
+
+before_script:
+  - python3 -v
+  - which python
+  - pip3 install psycopg2
+
+unittest:
+  script:
+    - python3 -m unittest discover tests
+
+install:
+  script:
+    - python3 setup.py install
+    - /usr/local/bin/prometheus-pgbouncer-exporter --version
