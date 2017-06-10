@@ -10,7 +10,7 @@ stages:
   - integration
 
 unittest:
-  stage: test
+  stage: unittest
   script:
     - python3 -m unittest discover tests
 
