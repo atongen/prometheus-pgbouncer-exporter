@@ -49,7 +49,7 @@ index_page = """
   <pre><code>
     scrape_configs:
       - job_name: pgbouncer
-        target_groups:
+        static_configs:
           - targets:
             - MACHINE_ADDRESS:9127
   </code></pre>
