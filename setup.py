@@ -6,6 +6,8 @@ if sys.version_info.major < 3:
 
 setup(
     name="prometheus-pgbouncer-exporter",
+    version="0.1.8",
+    python_requires='>=3',
     packages=find_packages(),
     entry_points={
         'console_scripts': [

@@ -9,3 +9,6 @@ debian/prometheus-pgbouncer-exporter
 *.log
 *.debhelper
 *.substvars
+
+build/
+dist/
