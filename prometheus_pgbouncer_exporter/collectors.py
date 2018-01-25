@@ -51,10 +51,11 @@ class NamedColumnCollector(PgBouncerCollector):
 
             # Sort for deterministic ordering in the output
             for key in sorted(self.metrics.keys()):
-                value = row[key]
-                label_values = self.get_labels_for_row(row)
+                value = row.get(key, None)
+                if value is not None:
+                    label_values = self.get_labels_for_row(row)
 
-                gauges[key].add_metric(label_values, value)
+                    gauges[key].add_metric(label_values, value)
 
         for gauge in gauges.values():
             yield gauge
@@ -131,6 +132,22 @@ class StatsCollector(NamedColumnCollector):
     labels = ['database']
 
     metrics = {
+        'total_xact_count': (
+            'xacts_total',
+            "Total number of transactions pooled by pgbouncer"
+        ),
+        'total_query_count': (
+            'queries_total',
+            "Total number of queries pooled by pgbouncer"
+        ),
+        'total_xact_time': (
+            'xact_microseconds_total',
+            "Total number of microseconds spent in transaction by pgbouncer",
+        ),
+        'total_wait_time': (
+            'wait_microseconds_total',
+            "Total number of microseconds spent waiting by pgbouncer",
+        ),
         'total_requests': (
             'requests_total',
             "Total number of SQL requests pooled by pgbouncer",

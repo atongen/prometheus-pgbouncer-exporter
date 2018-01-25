@@ -24,6 +24,12 @@ I would recommend installing using setuptools, then running the
 promtheus-pgbouncer-exporter script. A systemd service file is provided which
 can be used if you have systemd.
 
+### Wheel
+
+```sh
+$ python3 setup.py bdist_wheel
+```
+
 ## Authentication
 
 The service connects to the pgbouncer admin console to gather metrics. The
